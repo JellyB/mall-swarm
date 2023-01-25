@@ -1,5 +1,6 @@
 package com.macro.mall.config;
 
+import java.util.Arrays;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.cors.CorsConfiguration;
@@ -18,6 +19,7 @@ public class GlobalCorsConfig {
     @Bean
     public CorsWebFilter corsFilter() {
         CorsConfiguration config = new CorsConfiguration();
+        config.setAllowedOrigins(Arrays.asList("http://localhost:9091"));
         config.addAllowedMethod("*");
         config.addAllowedOriginPattern("*");
         config.addAllowedHeader("*");

@@ -99,7 +99,7 @@ public class UmsAdminServiceImpl implements UmsAdminService {
         params.put("password",password);
         CommonResult restResult = authService.getAccessToken(params);
         if(ResultCode.SUCCESS.getCode()==restResult.getCode()&&restResult.getData()!=null){
-//            updateLoginTimeByUsername(username);
+            updateLoginTimeByUsername(username);
             insertLoginLog(username);
         }
         return restResult;
